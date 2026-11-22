@@ -4,4 +4,6 @@ The data files in this repository (data/*.sdf.gz) are licensed under the Creativ
 
 Full legal text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 
-The terms of each contributing source database continue to apply. Each record lists its sources in the SOURCE_DATABASES field and their terms in the SOURCE_TERMS field. See README.md for details.
+The terms of each contributing source database continue to apply. Each record lists its sources in the SOURCE_DATABASES field and their terms in the SOURCE_TERMS field. 
+
+See README.md for details.
