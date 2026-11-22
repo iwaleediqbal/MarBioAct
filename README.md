@@ -168,15 +168,6 @@ No molecular weight or drug-likeness filter was applied.
 | MIBiG | 4.0.1 (Zenodo) |
 | GNPS | Faulkner Legacy spectral library |
 
-**Rules**
-
-- Structures were parsed with RDKit 2025.03.6 and merged on normalised canonical isomeric SMILES. Stereoisomers, salts, protonation states and distinct tautomer drawings were kept as separate entries, so that an assay value is never attached to a form that was not tested.
-- `DATABASE_ID` is derived from a SHA-256 hash of the structure.
-- Only compounds listed by a marine-specific collection (MarineNP, CMNPD or SWMD) are included. The broader resources (NPASS, Natural Products Atlas, MIBiG, GNPS) add identifiers, organisms and activity annotations to matching compounds.
-- Compounds were split by `BIOACTIVITY_STATUS`: `reported` (at least one imported assay record or qualitative annotation) or `not_reported_in_imported_data`.
-- 2D coordinates were generated with RDKit. Every exported record was parsed again and its InChI and stereochemical graph compared with the stored structure. Structures that failed this round trip were left out rather than approximated.
-- Build date: 23 September 2026.
-
 ---
 
 ## Read this before using the data
@@ -190,19 +181,6 @@ No molecular weight or drug-likeness filter was applied.
 - **Structures are 2D.** Docking needs 3D conformers, protonation and tautomer states, and a decision on undefined stereocentres.
 - **Overlap between sources is not independent support.** Databases often copy the same upstream records.
 - **Coverage is limited to the files used.** MarinLit was not included because no authorised bulk export was available.
-
----
-
-## Integrity check
-
-`SHA256SUMS.txt` holds the SHA-256 digests of the unpacked SDF files.
-
-```bash
-gunzip -k data/*.sdf.gz
-sha256sum -c SHA256SUMS.txt          # Linux
-shasum -a 256 -c SHA256SUMS.txt      # macOS
-```
-
 ---
 
 ## Licence and source terms
@@ -230,22 +208,3 @@ This table summarises the terms found by the authors and is not legal advice.
 If you use MarBioAct, please cite the accompanying article (citation details will be added on publication):
 
 > MarBioAct-DB: Integrating Marine Natural Product Structures and Bioactivity Evidence into a Traceable Compound Database. Manuscript in preparation, 2026.
-
-Please also cite the source resources:
-
-1. Lyu, C. et al. CMNPD: a comprehensive marine natural products database towards facilitating drug discovery from the ocean. *Nucleic Acids Res.* 2021, 49, D509–D515. https://doi.org/10.1093/nar/gkaa763
-2. Liu, Z.; Diopere, E.; Janssen, R.C.; Asselman, J. MarineNP: a comprehensive and locally deployable database of marine natural products, v1 [Data set]. Zenodo, 2025. https://doi.org/10.5281/zenodo.15641716
-3. Lin, H. et al. NPASS database update 2026: comprehensive quantitative composition, bioactivity, and ADME-Tox data of natural products for biomedical research. *Nucleic Acids Res.* 2026, 54, D1519–D1527. https://doi.org/10.1093/nar/gkaf1196
-4. Poynton, E.F. et al. The Natural Products Atlas 3.0: extending the database of microbially derived natural products. *Nucleic Acids Res.* 2025, 53, D691–D699. https://doi.org/10.1093/nar/gkae1093
-5. Zdouc, M.M. et al. MIBiG 4.0: advancing biosynthetic gene cluster curation through global collaboration. *Nucleic Acids Res.* 2025, 53, D678–D690. https://doi.org/10.1093/nar/gkae1115
-6. Davis, G.D.J.; Vasanthi, A.H.R. Seaweed metabolite database (SWMD): a database of natural compounds from marine algae. *Bioinformation* 2011, 5, 361–364. https://doi.org/10.6026/97320630005361
-7. Wang, M. et al. Sharing and community curation of mass spectrometry data with Global Natural Products Social Molecular Networking. *Nat. Biotechnol.* 2016, 34, 828–837. https://doi.org/10.1038/nbt.3597
-
----
-
-## Contact
-
-Maintained by **Muhammad Waleed Iqbal** ([@iwaleediqbal](https://github.com/iwaleediqbal)).
-Developed at [GenSphere](https://gnspr.com), led by Dr. Zohaib Nawaz.
-
-Questions, corrections and reports of misassigned structures are welcome through [GitHub Issues](https://github.com/iwaleediqbal/MarBioAct/issues).
