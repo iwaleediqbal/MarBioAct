@@ -1,4 +1,4 @@
-# MarBioAct — Marine Bioactive Compound Library
+# MarBioAct - Marine Bioactive Compound Library
 
 ![Compounds](https://img.shields.io/badge/compounds-83%2C052-0a7ea4)
 ![Format](https://img.shields.io/badge/format-SDF%20V2000%20(gzip)-2e8b57)
