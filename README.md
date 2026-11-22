@@ -13,28 +13,12 @@ The library comes as two non-overlapping SDF files: compounds **with reported bi
 
 ---
 
-## Contents
-
-- [Files](#files)
-- [Quick start](#quick-start)
-- [What each record contains](#what-each-record-contains)
-- [Library composition](#library-composition)
-- [How the library was built](#how-the-library-was-built)
-- [Read this before using the data](#read-this-before-using-the-data)
-- [Integrity check](#integrity-check)
-- [Licence and source terms](#licence-and-source-terms)
-- [Citation](#citation)
-- [Contact](#contact)
-
----
-
 ## Files
 
 ```
 MarBioAct/
 ├── README.md
 ├── LICENSE
-├── SHA256SUMS.txt
 └── data/
     ├── Marine_Bioactivity_Reported.sdf.gz
     └── Marine_Other_Compounds.sdf.gz
